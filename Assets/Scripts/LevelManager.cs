@@ -20,8 +20,6 @@ public class LevelManager : MonoBehaviour
         {
             int randSayi1 = Random.Range(0,4);
             Instantiate(obstacleList[randSayi1],new Vector3(0,-100-j,0),Quaternion.Euler(0,Random.Range(0,360),0),parent_obstacle);
-
-
         }
 
         GameObject[] deadly_blocks = GameObject.FindGameObjectsWithTag("DeadlyBlock");
@@ -31,14 +29,8 @@ public class LevelManager : MonoBehaviour
         {
             deadly_blocks[i].GetComponent<Renderer>().material = colors[randSayi2];
         }
-        
-
-
+  
     }
 
-   
-    void Update()
-    {
-        
-    }
+
 }

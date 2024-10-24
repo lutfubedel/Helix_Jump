@@ -50,8 +50,6 @@ public class PlayerManager : MonoBehaviour
             GameObject splash= Instantiate(splash_prefab,transform.position + new Vector3(0,-0.2f,0),Quaternion.Euler(90,0,Random.Range(0,360)));
             splash.transform.SetParent(collision.gameObject.transform);
             source.PlayOneShot(normal_block_sound);
-            
-
         }
 
         if(collision.gameObject.CompareTag("DeadlyBlock"))
@@ -61,8 +59,7 @@ public class PlayerManager : MonoBehaviour
                 GameObject splash = Instantiate(splash_prefab, transform.position + new Vector3(0, -0.2f, 0), Quaternion.Euler(90, 0, Random.Range(0, 360)));
                 splash.transform.SetParent(collision.gameObject.transform);
                 GetComponent<MeshRenderer>().enabled = false;
-                source.PlayOneShot(dead_sound);
-                print("bitti");
+                source.PlayOneShot(dead_sound);;
             }
             
 
@@ -99,7 +96,6 @@ public class PlayerManager : MonoBehaviour
             PlayerPrefs.SetInt("Score", score);
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
         }
     }
 
